@@ -12,8 +12,24 @@ if(window.localStorage.getItem("location")!=undefined){
   }else{
     window.localStorage.setItem("location", $('#city').val());
   }
+  if(window.localStorage.getItem("location")=="mumbai"){
+            $(".product-grid-item").hide();
+            $(".Mumbai").show();
+
+      }else{
+        $(".product-grid-item").hide();
+        $(".Delhi").show();                    
+   }
     
   $('#city').on('change', function() {
     window.localStorage.setItem("location",this.value);
     console.log(window.localStorage.getItem("location"));
+    if(window.localStorage.getItem("location")=="mumbai"){
+            $(".product-grid-item").hide();
+            $(".Mumbai").show();
+
+      }else{
+        $(".product-grid-item").hide();
+        $(".Delhi").show();                    
+     }
 });
